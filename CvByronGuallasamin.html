@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Currículum — Byron Guallasamín Morales</title>
+    <meta name="description"
+          content="CV de Byron Guallasamín Morales: Analista de Sistemas, desarrollo con Scriptcase/PHP/SQL Server, BI (Power BI, Superset, Metabase), Spring Boot, automatización y data."/>
+    <style>
+        :root {
+            --bg: #0b1220;
+            --card: #0f172a;
+            --muted: #94a3b8;
+            --text: #e5e7eb;
+            --accent: #0ea5e9;
+            --accent-2: #22d3ee;
+            --chip: #172554;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f8fafc;
+                --card: #ffffff;
+                --text: #0f172a;
+                --muted: #475569;
+                --chip: #eef2ff;
+            }
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        h1, h2, h3 {
+            margin: 0 0 .6rem;
+            line-height: 1.15
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            letter-spacing: .2px
+        }
+
+        h2 {
+            font-size: 1.05rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: .12rem
+        }
+
+        h3 {
+            font-size: 1rem
+        }
+
+        p {
+            margin: .35rem 0
+        }
+
+        ul {
+            margin: .2rem 0 .8rem 1.1rem
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .chip {
+            display: inline-block;
+            padding: .22rem .5rem;
+            border-radius: 999px;
+            background: var(--chip);
+            margin: .15rem .25rem .15rem 0;
+            font-size: .82rem
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 28px auto;
+            padding: 0 18px
+        }
+
+        .page {
+            background: var(--card);
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            overflow: hidden
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns:120px 1fr;
+            gap: 18px;
+            padding: 22px 24px;
+            border-bottom: 1px solid rgba(148, 163, 184, .15);
+            align-items: center
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 14px;
+            background: #111827;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, .08);
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .subtitle {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem 1rem;
+            align-items: center
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem 1rem;
+            margin-top: .6rem
+        }
+
+        .contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            color: var(--text)
+        }
+
+        .contact svg {
+            width: 16px;
+            height: 16px;
+            opacity: .85
+        }
+
+        .body {
+            display: grid;
+            grid-template-columns:320px 1fr
+        }
+
+        .sidebar {
+            padding: 18px 24px;
+            border-right: 1px solid rgba(148, 163, 184, .15)
+        }
+
+        .content {
+            padding: 18px 24px
+        }
+
+        .card {
+            border-radius: 12px;
+            padding: 14px 0 8px
+        }
+
+        .item {
+            margin-bottom: 16px
+        }
+
+        .item .top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px
+        }
+
+        .item .role {
+            font-weight: 600;
+            margin: .15rem 0 .35rem
+        }
+
+        .item .where {
+            font-weight: 600
+        }
+
+        .item .when {
+            white-space: nowrap;
+            color: var(--muted)
+        }
+
+        .bullets {
+            margin: .25rem 0 .6rem 1.2rem
+        }
+
+        .stack {
+            display: flex;
+            flex-wrap: wrap
+        }
+
+        .skill {
+            margin: .45rem 0 .55rem
+        }
+
+        .skill .bar {
+            height: 8px;
+            background: rgba(148, 163, 184, .22);
+            border-radius: 999px;
+            overflow: hidden
+        }
+
+        .skill .bar > span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            width: var(--val, 70%)
+        }
+
+        .tags {
+            margin-top: .6rem
+        }
+
+        .print-btn {
+            position: sticky;
+            top: 14px;
+            display: inline-flex;
+            gap: .5rem;
+            align-items: center;
+            padding: .55rem .9rem;
+            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
+            border: 1px solid rgba(148, 163, 184, .22);
+            backdrop-filter: blur(6px);
+            cursor: pointer;
+            margin: 14px 0 0 14px
+        }
+
+        .print-btn svg {
+            width: 16px;
+            height: 16px
+        }
+
+        @media (max-width: 860px) {
+            .header {
+                grid-template-columns:90px 1fr
+            }
+
+            .body {
+                grid-template-columns:1fr
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid rgba(148, 163, 184, .15)
+            }
+        }
+
+        /* 1) A4 con márgenes pequeños (más espacio útil) */
+        @page {
+            size: A4;
+            margin: 0.9cm;
+        }
+
+        @media print {
+            /* Colores reales */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Tema claro como en pantalla */
+            :root {
+                --bg: #fff;
+                --card: #fff;
+                --text: #0f172a;
+                --muted: #475569;
+                --accent: #0ea5e9;
+                --accent-2: #22d3ee;
+                --chip: #eef2ff;
+            }
+
+            html, body {
+                background: #fff !important;
+                color: var(--text) !important;
+            }
+
+            /* 2) Compactación de contenido */
+            .wrap {
+                max-width: 190mm !important;
+                margin: 0 auto !important;
+                padding: 0 !important;
+            }
+
+            body {
+                font-size: 12px !important;
+                line-height: 1.28 !important;
+            }
+
+            .page {
+                background: var(--card);
+                border: 1px solid rgba(148, 163, 184, .35);
+                border-radius: 16px;
+                box-shadow: none !important;
+            }
+
+            .header {
+                grid-template-columns: 92px 1fr !important;
+                gap: 0 !important;
+                padding: 12px 16px !important;
+                align-items: start !important;
+            }
+
+            .avatar {
+                width: 88px !important;
+                height: 88px !important;
+                margin-right: 14px !important;
+            }
+
+            .sidebar, .content {
+                padding: 10px 16px !important;
+            }
+
+            .card {
+                padding: 10px 0 6px !important;
+            }
+
+            .item {
+                margin-bottom: 8px !important;
+            }
+
+            h1 {
+                font-size: 19px !important;
+                margin-bottom: .2rem !important;
+            }
+
+            h2 {
+                font-size: 11.5px !important;
+                letter-spacing: .08rem !important;
+                margin-bottom: .3rem !important;
+            }
+
+            .chip {
+                font-size: .72rem !important;
+                padding: .12rem .40rem !important;
+            }
+
+            .skill .bar {
+                height: 6px !important;
+            }
+
+            ul {
+                margin: .15rem 0 .30rem 1rem !important;
+            }
+
+            /* 3) Evitar cortes feos */
+            .card, .item, .header, .sidebar, .content {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* 4) Ocultar botones / links neutros */
+            .print-btn {
+                display: none !important;
+            }
+
+            a {
+                color: inherit !important;
+                text-decoration: none !important;
+            }
+
+            /* 5) Escalado para “entrar en 1 hoja”
+               - Chrome/Edge respetan zoom en print
+               - Firefox usa transform como fallback */
+            body {
+                zoom: 0.92;
+            }
+
+            /* ajusta entre 0.90 y 0.95 si hace falta */
+            /* Firefox fallback */
+            @supports (-moz-appearance: none) {
+                body {
+                    zoom: 1;
+                }
+
+                /* Firefox ignora zoom; lo quitamos */
+                .page {
+                    transform: scale(0.92);
+                    transform-origin: top left;
+                    width: 210mm; /* base sin márgenes; el scale encoge todo */
+                }
+            }
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+            referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<button class="print-btn" onclick="descargarPDF()">Descargar PDF</button>
+<button class="print-btn" onclick="imprimir()" aria-label="Imprimir">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2m-2 4H8a2 2 0 0 1-2-2v-6h12v6a2 2 0 0 1-2 2Z"/>
+    </svg>
+    Imprimir
+</button>
+
+<script>
+    function imprimir() {
+        // Asegura que la sección a imprimir esté lista
+        const el = document.querySelector('.page');
+        if (!el) return;
+        window.print();
+    }
+</script>
+
+
+<div class="wrap">
+    <main class="page" role="document" aria-label="Currículum Vitae">
+        <header class="header">
+            <div class="avatar" aria-hidden="true">
+                <img src="resource/img/perfil.jpg" alt="Foto de Byron Guallasamín"/>
+
+            </div>
+            <div>
+                <h1>BYRON ANDRÉS GUALLASAMÍN MORALES</h1>
+                <div class="subtitle">
+                    <span class="role">Analista de Sistemas • Desarrollador</span>
+                    <span class="muted">•</span>
+                    <span class="muted">Quito, Pichincha — Ecuador</span>
+                </div>
+                <div class="contact" aria-label="Contacto">
+                    <a href="mailto:bguallasamin1999@outlook.com" title="Correo">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 6h16a2 2 0 0 1 2 2v.2l-10 6L2 8.2V8a2 2 0 0 1 2-2Zm18 5.3V16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4.7l10 6Z"/>
+                        </svg>
+                        bguallasamin1999@outlook.com</a>
+                    <a href="tel:+593988315648" title="Teléfono">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.7 11.7 0 0 0 3.7.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 8a1 1 0 0 1 1-1h3.4a1 1 0 0 1 1 1 11.7 11.7 0 0 0 .6 3.7 1 1 0 0 1-.25 1Z"/>
+                        </svg>
+                        +593 98 831 5648</a>
+                    <a href="www.linkedin.com/in/byron-andres-guallasamin-morales-6213b5181" title="LinkedIn">🔗
+                        www.linkedin.com/in/byron-andres-guallasamin-morales-6213b5181/</a>
+                    <a href="#" title="Portafolio">🔗 Portafolio</a>
+                </div>
+                <div class="tags" aria-label="Etiquetas">
+                    <span class="chip">Scriptcase</span><span class="chip">PHP</span><span
+                        class="chip">SQL Server</span><span class="chip">Power BI</span><span
+                        class="chip">Superset</span><span class="chip">Metabase</span><span
+                        class="chip">Spring Boot</span><span class="chip">Spring Security</span><span class="chip">Spring Cloud</span><span
+                        class="chip">Java</span><span
+                        class="chip">Docker</span><span class="chip">n8n</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="body">
+            <aside class="sidebar" aria-label="Resumen y habilidades">
+                <section class="card">
+                    <h2>Perfil</h2>
+                    <p>Analista de Sistemas con experiencia en desarrollo web y automatización de procesos para entornos
+                        ERP. Especialista en <strong>Scriptcase/PHP</strong> y <strong>SQL Server</strong>, con enfoque
+                        en BI (<strong>Power BI, Superset, Metabase</strong>) y microservicios (<strong>Spring
+                            Boot</strong>). Integro APIs (AS2 ERP, REST) y despliego soluciones escalables con <strong>Docker</strong>
+                        y <strong>n8n</strong>. Orientado a métricas, reducción de tiempos y trazabilidad de datos.</p>
+                </section>
+
+                <section class="card">
+                    <h2>Habilidades Clave</h2>
+                    <div class="skill">
+                        <div><strong>SQL Server</strong></div>
+                        <div class="bar"><span style="--val:90%"></span></div>
+                    </div>
+                    <div class="skill">
+                        <div><strong>PHP / Scriptcase</strong></div>
+                        <div class="bar"><span style="--val:88%"></span></div>
+                    </div>
+                    <div class="skill">
+                        <div><strong>Power BI / Superset / Metabase</strong></div>
+                        <div class="bar"><span style="--val:82%"></span></div>
+                    </div>
+                    <div class="skill">
+                        <div><strong>Spring Boot</strong></div>
+                        <div class="bar"><span style="--val:75%"></span></div>
+                    </div>
+                    <div class="skill">
+                        <div><strong>Docker / n8n</strong></div>
+                        <div class="bar"><span style="--val:70%"></span></div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>Idiomas</h2>
+                    <p>Español — Nativo</p>
+                    <p>Inglés — Intermedio (B1–B2)</p>
+                </section>
+
+                <section class="card">
+                    <h2>Contacto</h2>
+                    <p>📍 Quito, Pichincha — Ecuador</p>
+                    <p>✉️ bguallasamin1999@outlook.com</p>
+                    <p>☎️ +593 98 831 5648</p>
+                </section>
+            </aside>
+
+            <section class="content" aria-label="Experiencia y Educación">
+                <section class="card">
+                    <h2>Experiencia</h2>
+
+                    <article class="item">
+                        <div class="top"><span class="where">Textil Padilla Cía. Ltda.</span><span class="when">01/2023 — Presente</span>
+                        </div>
+                        <div class="role">Analista de Sistemas</div>
+                        <ul class="bullets">
+                            <li>Diseño y desarrollo de aplicaciones con <strong>Scriptcase (PHP, HTML, CSS, JS)</strong>
+                                y <strong>SQL Server</strong> para control de producción, pedidos, reclamos de calidad y
+                                convenios.
+                            </li>
+                            <li>Optimización de consultas y <strong>procedimientos almacenados</strong>; reducción de
+                                tiempos en reportes y procesos críticos del ERP.
+                            </li>
+                            <li>Integración de sistemas internos con plataformas externas <strong>(AS2 ERP, APIs
+                                REST)</strong> para sincronización de datos en tiempo real.
+                            </li>
+                            <li>Creación de dashboards de <strong>Business Intelligence</strong> (<strong>Power BI,
+                                Metabase, Superset</strong>) para análisis de ventas, producción y cobranzas.
+                            </li>
+                            <li>Desarrollo de módulos y reportes <strong>PDF (TCPDF)</strong>; automatización de flujos
+                                con <strong>jobs</strong> y <strong>scripts SQL</strong>.
+                            </li>
+                            <li><strong>Logros:</strong> reportes de 10 min → 1 min mediante indexación/optimización
+                                SQL; digitalización completa de reclamos de calidad; implementación de <em>Cobro
+                                    Integral</em> y convenios comerciales a nivel nacional.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="item">
+                        <div class="top"><span class="where">Webcoopec</span><span class="when">01/2020 — 08/2020</span>
+                        </div>
+                        <div class="role">Programador</div>
+                        <ul class="bullets">
+                            <li>Desarrollo de sistemas en <strong>PHP, HTML, CSS, JavaScript</strong> con interfaces
+                                funcionales y responsivas.
+                            </li>
+                            <li>Diseño y <strong>migración</strong> de bases de datos <strong>MySQL</strong> con
+                                limpieza y normalización de datos.
+                            </li>
+                            <li>Consultas SQL complejas para reportes; documentación de procesos; soporte a usuarios en
+                                QA y producción.
+                            </li>
+                            <li><strong>Logros:</strong> módulo de facturación e inventario; <strong>migración</strong>
+                                de +50 000 registros históricos sin pérdida de información; mejoras de rendimiento con
+                                indexación.
+                            </li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="card">
+                    <h2>Educación</h2>
+                    <article class="item">
+                        <div class="top"><span class="where">Universidad Tecnológica Israel</span><span class="when">2024 — Actual</span>
+                        </div>
+                        <div class="role">Ingeniería en Sistemas de la Información (en curso)</div>
+                    </article>
+                    <article class="item">
+                        <div class="top"><span class="where">Tecnológico Universitario Rumiñahui</span><span
+                                class="when">2016 — 2020</span></div>
+                        <div class="role">Tecnólogo en Análisis de Sistemas</div>
+                    </article>
+                </section>
+
+                <section class="card">
+                    <h2>Formación Complementaria</h2>
+                    <ul class="bullets">
+                        <li><strong>Administración de Amenazas Cibernéticas</strong> — Cisco Networking Academy, 16 h
+                            (07/2025)
+                        </li>
+                        <li><strong>Fundamentos de Python 2</strong> — Cisco Networking Academy, 40 h (07/2025)</li>
+                        <li><strong>Fundamentos de Python 1</strong> — Cisco Networking Academy, 30 h (06/2025)</li>
+                        <li><strong>Escuela de Cajero</strong> — Centro de Capacitación y Asesoría Financiera, 40 h
+                            (02/2022)
+                        </li>
+                        <li><strong>Idioma Extranjero</strong> — Instituto Superior Tecnológico Rumiñahui, 320 h
+                            (2017–2018)
+                        </li>
+                        <li><strong>Análisis Informático — Ethical Hacking</strong> — Cybersecurity Academy Greenetics,
+                            20 h (02/2017)
+                        </li>
+                        <li><strong>Diseño Gráfico</strong> — Centro Ecuatoriano de Capacitación SEPROINF
+                            (11/2016–01/2017)
+                        </li>
+                        <li><strong>Mantenimiento y reparación de PCs y Laptops</strong> — Centro de Capacitación
+                            SOLARI, 40 h (10/2016–12/2016)
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>Referencias Laborales</h2>
+                    <article class="item">
+                        <div class="top"><span class="where">Textil Padilla Cía. Ltda.</span><span
+                                class="when">Contacto</span></div>
+                        <p><strong>Ing. Luis López</strong> — Jefe de Sistemas <br>· Tel: 02-286-4330 <br>· <a
+                                href="mailto:sistemas@textilpadilla.com">sistemas@textilpadilla.com</a></p>
+                    </article>
+                    <article class="item">
+                        <div class="top"><span class="where">Webcoopec</span><span class="when">Contacto</span></div>
+                        <p><strong>Phd. Juan Carlos Guayasamin</strong> — Gerente General <br>· Tel: 098 406 9462 <br>· <a
+                                href="mailto:juankagm@webcoopec.com">juankagm@webcoopec.com</a></p>
+                    </article>
+                </section>
+            </section>
+        </div>
+    </main>
+</div>
+
+<!-- Opción A: usar la impresión del navegador para exportar a PDF -->
+<!-- Opción B (opcional): si incluyes html2pdf.js por CDN, puedes disparar descarga directa -->
+<script>
+    // Si existe html2pdf en la página, descomentar para descargar automáticamente
+    // function descargarPDF(){
+    //   const el = document.querySelector('.page');
+    //   const opt = { margin:10, filename:'CV_Byron_Guallasamin.pdf', image:{type:'jpeg',quality:0.98}, html2canvas:{scale:2}, jsPDF:{unit:'mm', format:'a4', orientation:'portrait'} };
+    //   html2pdf().set(opt).from(el).save();
+    // }
+    // document.querySelector('.print-btn').onclick = descargarPDF;
+</script>
+
+<script>
+    function descargarPDF() {
+        const elemento = document.querySelector('.page');
+        const opciones = {
+            margin: [15, 5, 15, 5], // Márgenes laterales pequeños
+            filename: 'CV_Byron_Guallasamin_final.pdf',
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'A4', orientation: 'portrait' }
+        };
+        html2pdf().set(opciones).from(elemento).save();
+    }
+</script>
+
+</body>
+</html>
